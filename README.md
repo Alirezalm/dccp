@@ -9,33 +9,18 @@ following, a general instruction to install and run ```dccp``` is provided.
 ### 1. External Dependencies
 
 1. Python Programming Language 3.7 or higher.
-2. Gurobi Optimizer [quick start guide](https://www.gurobi.com/documentation/quickstart.html)
+2. Gurobi Optimizer with a license [quick start guide](https://www.gurobi.com/documentation/quickstart.html)
 3. Message Passing Interface - MPI
     1. [OpenMPI](https://www.open-mpi.org/)
     2. [MPICH](https://www.mpich.org/)
     3. [Microsoft MPI (for windows)](https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi)
-4. Git
+4. GAMS with a license for solver comparison (optional) [guide](https://www.gams.com/latest/docs/)
+5. Git
 
 ### 2. Supporting Platforms
 
 1. Ubuntu 21.10 or WSL2 (preferred).
 2. Microsoft Windows 10.
-
-[//]: # (### 3. Python Package dependencies)
-
-[//]: # (1. mpi4py)
-
-[//]: # (2. numpy)
-
-[//]: # (3. scipy)
-
-[//]: # (4. sklearn)
-
-[//]: # (5. gurobipy)
-
-[//]: # ()
-
-[//]: # (see ```requirements.txt``` file for complete list of packages. )
 
 ### 3. MPI Installation on Ubuntu OS
 
@@ -183,6 +168,34 @@ As for the option, ```--soc``` are used.
 ```commandline 
 mpiexec -np 4 python dipoa-cli.py dsqcp 50 5  --soc
 ```
+
+### 6. Comparison with GAMS MINLP solvers
+
+1. make sure ```gams``` executable is on OS PATH.
+2. GAMS MINLP solvers are compared with ```DiPOA``` for DSLR problem instances.
+3. To use gams MINLP solvers use the following command template
+
+```commandline
+python gams-run.py <solver-name> <m> <n> <nz> <np>
+```
+
+where ```np``` is the number of nodes.
+
+#### Example:
+
+The following command runs ```bonmin``` for the DSLR problem with `1000` rows, `50` variables, `5` nonzero
+elements and , `4` nodes.
+
+```commandline
+python gams-run.py bonmin 1000 20 5 4
+
+```
+The MINLP solver that are used in the paper are
+1. bonmin
+2. dicopt
+3. knitro
+4. dicopt
+5. shot
 
 ### 7. Datasets used in the paper
 
