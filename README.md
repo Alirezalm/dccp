@@ -187,7 +187,7 @@ The following command runs ```bonmin``` for the DSLR problem with `1000` rows, `
 elements and , `4` nodes.
 
 ```commandline
-python gams-run.py bonmin 1000 20 5 4
+python gams-run.py bonmin 1000 50 5 4
 
 ```
 The MINLP solver that are used in the paper are
