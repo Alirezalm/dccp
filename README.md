@@ -20,7 +20,8 @@ following, a general instruction to install and run ```dccp``` is provided.
 ### 2. Supporting Platforms
 
 1. Ubuntu 21.10 or WSL2 (preferred).
-2. Microsoft Windows 10.
+2. OSX
+3. Microsoft Windows 10.
 
 ### 3. MPI Installation on Ubuntu OS
 
